@@ -27,21 +27,27 @@ def index():
 	return str(pd2[1])
 
 
-@app.route('/stats')
-def table():
 
-	pd2 = player_dictionary['resultSets']
+#--------------------------------#
+#Prepping Results Row
+
+pd2 = player_dictionary['resultSets']
 
 	
-	results_row = (pd2[1]['rowSet'])
+results_row = (pd2[1]['rowSet'])
+
+print(results_row[0][1])
+#results_row2 = results_row.pop(results_row[0][1])
+
+results_row2 = results_row[0]
+
+del results_row2[1]
 
 
-	print(results_row[0][1])
-	#results_row2 = results_row.pop(results_row[0][1])
+#--------------------------------#
 
-	results_row2 = results_row[0]
-
-	del results_row2[1]
+@app.route('/stats')
+def table():
 	return str(results_row2)
 
 
