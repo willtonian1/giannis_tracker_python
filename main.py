@@ -27,7 +27,7 @@ def index():
 	return str(pd2[1])
 
 
-@app.route('/table')
+@app.route('/stats')
 def table():
 
 	pd2 = player_dictionary['resultSets']
@@ -41,6 +41,7 @@ def table():
 
 	results_row2 = results_row[0]
 
+	del results_row2[1]
 	return str(results_row2)
 
 
