@@ -9,25 +9,14 @@ import modules.recent as r
 #giannis
 career = playercareerstats.PlayerCareerStats(player_id='203507')
 
-#print(career.get_data_frames()[0])
-
-#print(career.get_json())
-
 # dictionary
 player_dictionary = (career.get_dict())
-#player_year1  = player_dictionary
 
 
-print(r.get_recent_game())
+pd2 = player_dictionary['resultSets']  #getting stats stuff
 
-pd2 = player_dictionary['resultSets']
-current_stats = pd2[1]
+header_row = str(pd2[1]['headers'])  #headers only
 
-
-header_row = str(pd2[1]['headers'])
-results_row = str(pd2[1]['rowSet'])
-
-print()
 
 app = Flask(__name__)
 CORS(app)
@@ -40,9 +29,19 @@ def index():
 
 @app.route('/table')
 def table():
-	return str(pd2[1])
 
+	pd2 = player_dictionary['resultSets']
 
 	
+	results_row = (pd2[1]['rowSet'])
+
+
+	print(results_row[0][1])
+	#results_row2 = results_row.pop(results_row[0][1])
+
+	results_row2 = results_row[0]
+
+	return str(results_row2)
+
 
 app.run(host='0.0.0.0', port=81)

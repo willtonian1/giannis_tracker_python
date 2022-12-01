@@ -1,9 +1,10 @@
 message = "hello"
 
-from nba_api.stats.static import teams
+from nba_api.stats.endpoints import commonplayerinfo
 
 def get_recent_game():
-	print(teams.find_team_by_abbreviation('MIL'))
+
+	return 0
 	
 if __name__ == "main":
 	print("Hi")
