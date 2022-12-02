@@ -49,9 +49,14 @@ def table():
 	return str(results_row2)
 
 
+#------------ Recent Game --------------#
+
+
 @app.route('/gamelog')
 def gamelog():
 	return r.get_gamelog()
 
+
+#---------------------------------------#
 
 app.run(host='0.0.0.0', port=81)
