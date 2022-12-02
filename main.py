@@ -17,10 +17,11 @@ pd2 = player_dictionary['resultSets']  #getting stats stuff
 
 header_row = str(pd2[1]['headers'])  #headers only
 
+r.get_gamelog()
+
 
 app = Flask(__name__)
 CORS(app)
-
 
 @app.route('/')
 def index():
@@ -42,7 +43,6 @@ print(results_row[0][1])
 results_row2 = results_row[0]
 
 del results_row2[1]
-
 
 #--------------------------------#
 
