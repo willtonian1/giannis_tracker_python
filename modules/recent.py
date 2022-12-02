@@ -29,8 +29,9 @@ def get_gamelog():
 
 	a = player_gamelog.get_dict()
 	b = a['resultSets']
-	
-	return print(b)
+	c = b[0]['rowSet']
+	d= c[0]
+	return str(d)
 
 
 if __name__ == "main":
