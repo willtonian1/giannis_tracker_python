@@ -4,35 +4,34 @@ from nba_api.stats.endpoints import leagueleaders
 from nba_api.live.nba.endpoints import scoreboard
 from nba_api.stats.endpoints import playergamelog
 
-
-
 player_info = leagueleaders.LeagueLeaders()
 player_gamelog = playergamelog.PlayerGameLog(player_id=203507)
 
 
 def get_scoreboard():
 
-# Today's Score Board
+	# Today's Score Board
 	games = scoreboard.ScoreBoard()
 
-# json
+	# json
 	games.get_json()
 
-# dictionary
+	# dictionary
 	e = games.get_dict()
 	return print(e)
-
-
 
 
 def get_league_leaders():
 	return print(player_info.get_json())
 
 
-	
-
 def get_gamelog():
-	return print(player_gamelog.get_data_frames())
+
+	a = player_gamelog.get_dict()
+	b = a['resultSets']
 	
+	return print(b)
+
+
 if __name__ == "main":
 	print("Hi")
