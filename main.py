@@ -37,7 +37,6 @@ pd2 = player_dictionary['resultSets']
 results_row = (pd2[1]['rowSet'])
 
 print(results_row[0][1])
-#results_row2 = results_row.pop(results_row[0][1])
 
 results_row2 = results_row[0]
 
