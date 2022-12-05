@@ -1,10 +1,12 @@
+#External Modules
 from nba_api.stats.endpoints import playercareerstats
 import json, numpy, requests, pandas
 from flask import Flask
 from flask_cors import CORS
 
+#Local Modules
 import modules.recent as r
-#import ast
+
 
 #giannis
 career = playercareerstats.PlayerCareerStats(player_id='203507')
